@@ -2,11 +2,14 @@ package model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +30,10 @@ public class Tracking implements Serializable{
 	
 	@Column (columnDefinition= "numeric", nullable= false)
 	private float TRK_LATITUDE;
+	
+	@ManyToOne (cascade=CascadeType.ALL)
+	@JoinColumn(name="OST_ID")
+	private OrderState orderState;
 	
 	public Tracking(float tRK_LONGITUDE, float tRK_LATITUDE) {
 		super();
@@ -54,6 +61,12 @@ public class Tracking implements Serializable{
 	}
 	public void setTRK_LATITUDE(float tRK_LATITUDE) {
 		TRK_LATITUDE = tRK_LATITUDE;
+	}
+	public OrderState getOrderState() {
+		return orderState;
+	}
+	public void setOrderState(OrderState orderState) {
+		this.orderState = orderState;
 	}
 
 }

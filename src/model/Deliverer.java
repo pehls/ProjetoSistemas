@@ -21,7 +21,7 @@ public class Deliverer implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column (columnDefinition= "serial")
+	@Column (name= "DLV_ID",columnDefinition= "serial")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long DLV_ID;
 	

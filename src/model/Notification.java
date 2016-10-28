@@ -2,11 +2,14 @@ package model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +30,14 @@ public class Notification implements Serializable{
 	
 	@Column (columnDefinition= "integer", nullable= false)
 	private int NTC_DELAYMESSAGE;
+	
+	@ManyToOne (cascade=CascadeType.ALL)
+	@JoinColumn(name="ORD_ID")
+	private Order order;
+	
+	@ManyToOne (cascade=CascadeType.ALL)
+	@JoinColumn(name="LGT_ID")
+	private Login login;
 	
 	public Notification() {
 		super();
@@ -54,6 +65,18 @@ public class Notification implements Serializable{
 	}
 	public void setNTC_DELAYMESSAGE(int nTC_DELAYMESSAGE) {
 		NTC_DELAYMESSAGE = nTC_DELAYMESSAGE;
+	}
+	public Order getOrder() {
+		return order;
+	}
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+	public Login getLogin() {
+		return login;
+	}
+	public void setLogin(Login login) {
+		this.login = login;
 	}
 
 }

@@ -18,7 +18,7 @@ public class State implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column (columnDefinition= "serial")
+	@Column (name="STT_ID", columnDefinition= "serial")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long STT_ID;
 	
