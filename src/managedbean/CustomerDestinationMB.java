@@ -34,4 +34,10 @@ public class CustomerDestinationMB {
 		}
 		return true;
 	}
+	public ArrayList<CustomerDestination> getCustomerDestinations() {
+		return customerDestinations;
+	}
+	public void setCustomerDestinations(ArrayList<CustomerDestination> customerDestinations) {
+		this.customerDestinations = customerDestinations;
+	}
 }

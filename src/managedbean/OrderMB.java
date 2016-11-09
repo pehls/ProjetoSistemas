@@ -36,4 +36,8 @@ public class OrderMB {
 		}
 		return true;
 	}
+
+	public ArrayList<Order> getOrders() {
+		return orders;
+	}
 }

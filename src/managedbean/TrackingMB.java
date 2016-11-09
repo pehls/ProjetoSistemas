@@ -36,4 +36,8 @@ public class TrackingMB {
 		}
 		return true;
 	}
+
+	public ArrayList<Tracking> getTrackings() {
+		return trackings;
+	}
 }

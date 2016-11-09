@@ -36,5 +36,9 @@ public class NotificationMB {
 		}
 		return true;
 	}
+
+	public ArrayList<Notification> getNotifications() {
+		return notifications;
+	}
 }
 

@@ -36,4 +36,8 @@ public class ProviderMB {
 		}
 		return true;
 	}
+
+	public ArrayList<Provider> getProviders() {
+		return providers;
+	}
 }

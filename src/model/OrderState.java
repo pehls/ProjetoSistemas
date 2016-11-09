@@ -37,11 +37,6 @@ public class OrderState implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrderState(long oST_ID) {
-		super();
-		OST_ID = oST_ID;
-	}
-
 	public long getOST_ID() {
 		return OST_ID;
 	}

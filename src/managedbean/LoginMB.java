@@ -39,4 +39,8 @@ public class LoginMB {
 		return true;
 	}
 
+	public ArrayList<Login> getLogins() {
+		return logins;
+	}
+
 }

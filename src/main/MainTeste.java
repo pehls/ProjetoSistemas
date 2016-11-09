@@ -4,11 +4,15 @@ import managedbean.CustomerDestinationMB;
 import managedbean.CustomerMB;
 import managedbean.DelivererMB;
 import managedbean.LoginMB;
+import managedbean.TrackingMB;
 import model.Customer;
 import model.CustomerDestination;
 import model.Deliverer;
 import model.Login;
 import model.LoginType;
+import model.Order;
+import model.OrderState;
+import model.Tracking;
 
 public class MainTeste {
 /*
@@ -18,9 +22,18 @@ public class MainTeste {
 		// TODO Auto-generated method stub
 		Login lg = new Login("joao", "123");
 		LoginType lgnTp = new LoginType("customer");
-		Deliverer dlv = new Deliverer("mario", "85837471728", "5191888888", "mario@bol.com",
-				true, true, false,false,
-				false);
+		
+//		Order ord = new Order();
+//		OrderState ost = new OrderState();
+		
+//		Tracking trckg = new Tracking(1234567890, 8765321);
+//		TrackingMB trkmb = new TrackingMB();
+//		trkmb.settracking(trckg);
+//		trkmb.adicionar();
+//		
+//		Deliverer dlv = new Deliverer("mario", "85837471728", "5191888888", "mario@bol.com",
+//				true, true, false,false,
+//				false);
 		Customer cstm = new Customer("Pedro", "91987438900", "5592999999", "pedro@bol.com");
 		CustomerDestination cstmDstn = new CustomerDestination("91760389", "rua cavalhada, 271", "RS", "poa",
 				"BR","brasil");
@@ -28,10 +41,11 @@ public class MainTeste {
 		LoginMB lgMB = new LoginMB();
 		lgMB.setLogin(lg);
 		
-		dlv.setLogin(lg);
-		DelivererMB dlvMB = new DelivererMB();
-		dlvMB.setDeliverer(dlv);
-		dlvMB.adicionarDeliverers();
+//		dlv.setLogin(lg);
+//		dlv.setTracking(trckg);
+//		DelivererMB dlvMB = new DelivererMB();
+//		dlvMB.setDeliverer(dlv);
+//		dlvMB.adicionarDeliverers();
 		
 		cstm.setLogin(lg);
 		CustomerMB cstmMB = new CustomerMB();
@@ -44,6 +58,8 @@ public class MainTeste {
 		cstmDstnMB.adicionarCustomerDestination();
 		
 		System.out.println(lgMB.adicionarLogins());
+		
+		
 	}
 
 }

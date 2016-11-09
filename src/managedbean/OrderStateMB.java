@@ -36,5 +36,9 @@ public class OrderStateMB {
 		}
 		return true;
 	}
+
+	public ArrayList<OrderState> getOrderStates() {
+		return orderStates;
+	}
 }
 

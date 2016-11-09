@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NotFound;
+
 @Entity
 @Table (name="TRACKINGS")
 public class Tracking implements Serializable{

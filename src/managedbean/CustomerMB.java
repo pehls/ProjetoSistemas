@@ -34,4 +34,7 @@ public class CustomerMB {
 		}
 		return true;
 	}
+	public ArrayList<Customer> getCustomers() {
+		return customers;
+	}
 }

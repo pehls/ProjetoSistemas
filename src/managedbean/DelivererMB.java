@@ -39,4 +39,8 @@ public class DelivererMB {
 		return true;
 	}
 
+	public ArrayList<Deliverer> getDeliverers() {
+		return deliverers;
+	}
+
 }

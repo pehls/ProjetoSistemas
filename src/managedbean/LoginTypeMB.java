@@ -37,4 +37,8 @@ public class LoginTypeMB {
 		}
 		return true;
 	}
+
+	public ArrayList<LoginType> getLgnTypes() {
+		return lgnTypes;
+	}
 }
