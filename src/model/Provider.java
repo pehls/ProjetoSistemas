@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -43,6 +44,10 @@ public class Provider implements Serializable{
 	@ManyToOne (cascade=CascadeType.ALL)
 	@JoinColumn(name="LGN_ID")
 	private Login login;
+	
+	@OneToOne (cascade=CascadeType.ALL)
+	@JoinColumn (name="TRK_ID", nullable=false)
+	private Tracking tracking;
 	
 	public Provider() {
 		super();
@@ -87,6 +92,18 @@ public class Provider implements Serializable{
 	}
 	public void setPRV_EMAIL(String pRV_EMAIL) {
 		PRV_EMAIL = pRV_EMAIL;
+	}
+	public Login getLogin() {
+		return login;
+	}
+	public void setLogin(Login login) {
+		this.login = login;
+	}
+	public Tracking getTracking() {
+		return tracking;
+	}
+	public void setTracking(Tracking tracking) {
+		this.tracking = tracking;
 	}
 	
 

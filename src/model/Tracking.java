@@ -21,7 +21,7 @@ public class Tracking implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column (columnDefinition= "serial")
+	@Column (name="TRK_ID",columnDefinition= "serial")
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private long TRK_ID;
 	
