@@ -23,6 +23,16 @@ public class LoginMB {
 	public Login getLogin() {
 		return login;
 	}
+	
+	public Login getLogin (String username) {
+		for (Login login : logins) {
+			if (login.getLGN_USERNAME().equalsIgnoreCase(username))
+				return login;
+			else
+				return null;
+		}
+		return null;
+	}
 
 	public void setLogin(Login login) {
 		this.logins.add(login);
