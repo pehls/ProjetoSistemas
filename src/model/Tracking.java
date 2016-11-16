@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -34,6 +35,8 @@ public class Tracking implements Serializable{
 	@Column (columnDefinition= "numeric", nullable= false)
 	private float TRK_LATITUDE;
 	
+	@ManyToMany (mappedBy="trackings")
+	private Collection <OrderState> orderstates;
 	
 	public Tracking(float tRK_LONGITUDE, float tRK_LATITUDE) {
 		super();
@@ -55,6 +58,12 @@ public class Tracking implements Serializable{
 	}
 	public void setTRK_LATITUDE(float tRK_LATITUDE) {
 		TRK_LATITUDE = tRK_LATITUDE;
+	}
+	public Collection<OrderState> getOrderstates() {
+		return orderstates;
+	}
+	public void setOrderstates(Collection<OrderState> orderstates) {
+		this.orderstates = orderstates;
 	}
 	
 }

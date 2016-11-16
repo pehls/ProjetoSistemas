@@ -46,7 +46,7 @@ public class Provider implements Serializable{
 	private Login login;
 	
 	@OneToOne (cascade=CascadeType.ALL)
-	@JoinColumn (name="TRK_ID", nullable=false)
+	@JoinColumn (name="TRK_ID", nullable=true)
 	private Tracking tracking;
 	
 	public Provider() {

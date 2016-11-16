@@ -33,25 +33,27 @@ public class MainTeste {
 		
 		LoginMB lgMB = new LoginMB();
 		lgMB.setLogin(lg);
-		lgMB.adicionarLogins();
+//		lgMB.adicionarLogins();
 		
-//		cstm.setLogin(lg);
-//		CustomerMB cstmMB = new CustomerMB();
-//		cstmMB.setCustomer(cstm);
-//		cstmMB.adicionarCustomer();
+		cstm.setLogin(lg);
+		CustomerMB cstmMB = new CustomerMB();
+		cstmMB.setCustomer(cstm);
+		cstmMB.adicionarCustomer();
+
+		cstmDstn.setCustomer(cstm);
+		CustomerDestinationMB cstmDstnMB = new CustomerDestinationMB();
+		cstmDstnMB.setCustomer(cstmDstn);
+		cstmDstnMB.adicionarCustomerDestination();
 		
-//		cstmDstn.setCustomer(cstm);
-//		CustomerDestinationMB cstmDstnMB = new CustomerDestinationMB();
-//		cstmDstnMB.setCustomer(cstmDstn);
-//		cstmDstnMB.adicionarCustomerDestination();
+		Provider prv = new Provider( "rua joao", "pehls", "85855", "+88+5+5+",
+				"udhasiudha");
+		prv.setLogin(lg);
 		
-//		Provider prv = new Provider( "rua joao", "pehls", "85855", "+88+5+5+",
-//				"udhasiudha");
-//		ProviderMB prvMB = new ProviderMB();
-//		prvMB.setprovider(prv);
-//		prvMB.adicionar();
+		ProviderMB prvMB = new ProviderMB();
+		prvMB.setprovider(prv);
+		prvMB.adicionar();
 		
-//		System.out.println(lgMB.adicionarLogins());
+		System.out.println(lgMB.adicionarLogins());
 				
 	}
 	

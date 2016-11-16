@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -44,7 +45,7 @@ public class OrderState implements Serializable{
 				inverseJoinColumns={
 							@JoinColumn (name="TRK_ID")
 							})
-	private ArrayList <Tracking> trackings;
+	private Set <Tracking> trackings;
 	public OrderState() {
 		super();
 		// TODO Auto-generated constructor stub
