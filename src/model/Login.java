@@ -66,5 +66,10 @@ public class Login implements Serializable{
 	public void setLoginType(LoginType loginType) {
 		this.loginType = loginType;
 	}
+	@Override
+	public String toString() {
+		return "Login [LGN_USERNAME=" + LGN_USERNAME + ", LGN_PASSWORD=" + LGN_PASSWORD + ", loginType=" + loginType
+				+ "]";
+	}
 
 }

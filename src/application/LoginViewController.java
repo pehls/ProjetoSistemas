@@ -32,10 +32,14 @@
 
 package application;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import managedbean.LoginMB;
 import model.Login;
+import model.LoginType;
 
 public class LoginViewController {
 	@FXML
@@ -43,14 +47,25 @@ public class LoginViewController {
 	
 	@FXML
 	TextField txPass;
-    
-    @FXML
-    protected void Click() {
-		String usuario = txUser.getText();
+	
+	@FXML
+	Button loginBtn;
+
+	@FXML
+	public void Click () {
+		String login = txUser.getText();
 		String senha = txPass.getText();
-		LoginMB cLoginMB = new LoginMB();
-		Login lgn = (Login) cLoginMB.getLogin(usuario);
-		System.out.println(lgn.toString());
+		System.out.println(login + " - "+ senha);
+		Login lg = new Login(login, senha);
 		
+		LoginType lgnTp = new LoginType("customer");
+		lg.setLoginType(lgnTp);
+		
+		LoginMB lgMB = new LoginMB();
+		lgMB.setLogin(lg);
+		lgMB.adicionarLogins();
+		System.out.println((lgMB.getLogin(login)).toString());
 	}
+
+	
 }
