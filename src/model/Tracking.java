@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -33,9 +34,6 @@ public class Tracking implements Serializable{
 	@Column (columnDefinition= "numeric", nullable= false)
 	private float TRK_LATITUDE;
 	
-	@ManyToOne (cascade=CascadeType.ALL)
-	@JoinColumn(name="OST_ID")
-	private OrderState orderState;
 	
 	public Tracking(float tRK_LONGITUDE, float tRK_LATITUDE) {
 		super();
@@ -45,12 +43,6 @@ public class Tracking implements Serializable{
 	public Tracking() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-	public long getTRK_ID() {
-		return TRK_ID;
-	}
-	public void setTRK_ID(long tRK_ID) {
-		TRK_ID = tRK_ID;
 	}
 	public float getTRK_LONGITUDE() {
 		return TRK_LONGITUDE;
@@ -64,11 +56,5 @@ public class Tracking implements Serializable{
 	public void setTRK_LATITUDE(float tRK_LATITUDE) {
 		TRK_LATITUDE = tRK_LATITUDE;
 	}
-	public OrderState getOrderState() {
-		return orderState;
-	}
-	public void setOrderState(OrderState orderState) {
-		this.orderState = orderState;
-	}
-
+	
 }

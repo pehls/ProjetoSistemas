@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -32,6 +35,16 @@ public class OrderState implements Serializable{
 	@ManyToOne (cascade=CascadeType.ALL)
 	@JoinColumn(name="STT_ID")
 	private State state;
+	
+	@ManyToMany
+	@JoinTable (name="ORDERSTATETRACKINGS", 
+				joinColumns={
+							@JoinColumn (name="OST_ID")
+							},
+				inverseJoinColumns={
+							@JoinColumn (name="TRK_ID")
+							})
+	private ArrayList <Tracking> trackings;
 	public OrderState() {
 		super();
 		// TODO Auto-generated constructor stub

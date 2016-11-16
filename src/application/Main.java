@@ -52,7 +52,7 @@ public class Main extends Application {
 					primaryStage.show(); */			
 			
 			
-			   Parent root = FXMLLoader.load(getClass().getResource("/principal/Main.fxml"));
+			   Parent root = FXMLLoader.load(getClass().getResource("./principal/Main.fxml"));
 			    Scene scene = new Scene(root, 200, 200);
 			    // stage.setTitle("FXML Welcome");
 			    primaryStage.setScene(scene);

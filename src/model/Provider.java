@@ -53,10 +53,9 @@ public class Provider implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Provider(long pRV_ID, String pRV_ADDRESS, String pRV_COMPANYNAME, String pRV_CNPJ, String pRV_PHONE,
+	public Provider( String pRV_ADDRESS, String pRV_COMPANYNAME, String pRV_CNPJ, String pRV_PHONE,
 			String pRV_EMAIL) {
 		super();
-		PRV_ID = pRV_ID;
 		PRV_ADDRESS = pRV_ADDRESS;
 		PRV_COMPANYNAME = pRV_COMPANYNAME;
 		PRV_CNPJ = pRV_CNPJ;

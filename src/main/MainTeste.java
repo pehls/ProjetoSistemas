@@ -4,6 +4,7 @@ import managedbean.CustomerDestinationMB;
 import managedbean.CustomerMB;
 import managedbean.DelivererMB;
 import managedbean.LoginMB;
+import managedbean.ProviderMB;
 import managedbean.TrackingMB;
 import model.Customer;
 import model.CustomerDestination;
@@ -12,6 +13,7 @@ import model.Login;
 import model.LoginType;
 import model.Order;
 import model.OrderState;
+import model.Provider;
 import model.Tracking;
 
 public class MainTeste {
@@ -28,21 +30,28 @@ public class MainTeste {
 		CustomerDestination cstmDstn = new CustomerDestination("91760389", "rua cavalhada, 271", "RS", "poa",
 				"BR","brasil");
 		lg.setLoginType(lgnTp);
+		
 		LoginMB lgMB = new LoginMB();
 		lgMB.setLogin(lg);
-
+		lgMB.adicionarLogins();
 		
-		cstm.setLogin(lg);
-		CustomerMB cstmMB = new CustomerMB();
-		cstmMB.setCustomer(cstm);
-		cstmMB.adicionarCustomer();
+//		cstm.setLogin(lg);
+//		CustomerMB cstmMB = new CustomerMB();
+//		cstmMB.setCustomer(cstm);
+//		cstmMB.adicionarCustomer();
 		
-		cstmDstn.setCustomer(cstm);
-		CustomerDestinationMB cstmDstnMB = new CustomerDestinationMB();
-		cstmDstnMB.setCustomer(cstmDstn);
-		cstmDstnMB.adicionarCustomerDestination();
+//		cstmDstn.setCustomer(cstm);
+//		CustomerDestinationMB cstmDstnMB = new CustomerDestinationMB();
+//		cstmDstnMB.setCustomer(cstmDstn);
+//		cstmDstnMB.adicionarCustomerDestination();
 		
-		System.out.println(lgMB.adicionarLogins());
+//		Provider prv = new Provider( "rua joao", "pehls", "85855", "+88+5+5+",
+//				"udhasiudha");
+//		ProviderMB prvMB = new ProviderMB();
+//		prvMB.setprovider(prv);
+//		prvMB.adicionar();
+		
+//		System.out.println(lgMB.adicionarLogins());
 				
 	}
 	
