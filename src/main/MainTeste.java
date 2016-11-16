@@ -49,6 +49,9 @@ public class MainTeste {
 				"udhasiudha");
 		prv.setLogin(lg);
 		
+		Tracking trk = new Tracking(123,4234);
+		prv.setTracking(trk);
+		
 		ProviderMB prvMB = new ProviderMB();
 		prvMB.setprovider(prv);
 		prvMB.adicionar();
