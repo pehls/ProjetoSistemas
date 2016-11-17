@@ -32,11 +32,17 @@
 
 package application;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import managedbean.LoginMB;
 import model.Login;
 import model.LoginType;
@@ -69,8 +75,13 @@ public class LoginViewController {
 	}
 	
 	@FXML
-	public void Cadastrar() {
-		
+	public void Cadastrar() throws IOException {
+		Stage primaryStage = new Stage();
+		primaryStage.setTitle("Cadastro");
+        Pane myPane = (Pane)FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
+        Scene myScene = new Scene(myPane);
+        primaryStage.setScene(myScene);
+        primaryStage.show();
 	}
 
 	
