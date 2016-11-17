@@ -51,20 +51,26 @@ public class LoginViewController {
 	@FXML
 	Button loginBtn;
 
+	private LoginMB lgMB = new LoginMB();
 	@FXML
-	public void Click () {
+	public void Login () {
 		String login = txUser.getText();
 		String senha = txPass.getText();
 		System.out.println(login + " - "+ senha);
-		Login lg = new Login(login, senha);
+//		Login lg = new Login(login, senha);
+//		
+//		LoginType lgnTp = new LoginType("customer");
+//		lg.setLoginType(lgnTp);
+//		
+//		LoginMB lgMB = new LoginMB();
+//		lgMB.setLogin(lg);
+//		lgMB.adicionarLogins();
+		System.out.println((lgMB.getLogin(login, senha)).toString());
+	}
+	
+	@FXML
+	public void Cadastrar() {
 		
-		LoginType lgnTp = new LoginType("customer");
-		lg.setLoginType(lgnTp);
-		
-		LoginMB lgMB = new LoginMB();
-		lgMB.setLogin(lg);
-		lgMB.adicionarLogins();
-		System.out.println((lgMB.getLogin(login)).toString());
 	}
 
 	

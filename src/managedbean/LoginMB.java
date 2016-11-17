@@ -24,10 +24,11 @@ public class LoginMB {
 		return login;
 	}
 	
-	public Login getLogin (String username) {
+	public Login getLogin (String username, String password) {
 		for (Login login : logins) {
-			if (login.getLGN_USERNAME().equalsIgnoreCase(username))
-				return login;
+			if (login.getLGN_USERNAME().equals(username))
+				if (login.getLGN_PASSWORD().equals(password))
+						return login;
 			else
 				return null;
 		}
