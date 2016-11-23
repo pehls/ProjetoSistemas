@@ -38,6 +38,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -57,7 +58,7 @@ public class LoginViewController {
 	@FXML
 	Button loginBtn;
 
-	private LoginMB lgMB = new LoginMB();
+	private static LoginMB lgMB = new LoginMB();
 	@FXML
 	public void Login () {
 		String login = txUser.getText();
@@ -75,13 +76,16 @@ public class LoginViewController {
 	}
 	
 	@FXML
-	public void Cadastrar() throws IOException {
-		Stage primaryStage = new Stage();
-		primaryStage.setTitle("Cadastro");
-        Pane myPane = (Pane)FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
-        Scene myScene = new Scene(myPane);
-        primaryStage.setScene(myScene);
-        primaryStage.show();
+	public void Cadastrar() throws Exception {
+		
+//		Stage primaryStage = new Stage();
+//		primaryStage.setTitle("Cadastro");
+//        Pane myPane = (Pane)FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
+//        Scene myScene = new Scene(myPane);
+//        primaryStage.setScene(myScene);
+//        primaryStage.show();
+		CadastroView cadastro = new CadastroView();
+		cadastro.start(new Stage());
 	}
 
 	

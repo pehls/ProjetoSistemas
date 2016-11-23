@@ -21,6 +21,11 @@ public class CadastroController {
 	Button cadastroBtn;
 	
 	private LoginMB lgMB = new LoginMB();
+	
+	public Button getCadastroBtn() {
+		return cadastroBtn;
+	}
+	
 	public void Cadastrar () {
 		System.out.println(txUser.getText() + " - "+ txPass.getText());
 		Login lg = new Login(txUser.getText(), txPass.getText());
@@ -30,9 +35,8 @@ public class CadastroController {
 		
 		LoginMB lgMB = new LoginMB();
 		lgMB.setLogin(lg);
-		lgMB.adicionarLogins();
-		
-		
+		if (lgMB.adicionarLogins())
+				CadastroView.getStageCadastro().close();
 	}
 
 }

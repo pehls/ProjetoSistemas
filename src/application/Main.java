@@ -67,7 +67,7 @@ public class Main extends Application {
 		String usuario = txUser.getText();
 		String senha = txPass.getText();
 		LoginMB cLoginMB = new LoginMB();
-		Login lgn = cLoginMB.getLogin(usuario);
+		Login lgn = cLoginMB.getLogin(usuario, senha);
 		System.out.println(lgn.toString());
 		
 	}
