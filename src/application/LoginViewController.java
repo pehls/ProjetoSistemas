@@ -47,6 +47,7 @@ import javafx.stage.Stage;
 import managedbean.LoginMB;
 import model.Login;
 import model.LoginType;
+import util.ItensEstaticos;
 
 public class LoginViewController {
 	@FXML
@@ -58,7 +59,6 @@ public class LoginViewController {
 	@FXML
 	Button loginBtn;
 
-	private static LoginMB lgMB = new LoginMB();
 	@FXML
 	public void Login () {
 		String login = txUser.getText();
@@ -72,7 +72,7 @@ public class LoginViewController {
 //		LoginMB lgMB = new LoginMB();
 //		lgMB.setLogin(lg);
 //		lgMB.adicionarLogins();
-		System.out.println((lgMB.getLogin(login, senha)).toString());
+		System.out.println((ItensEstaticos.getLgMB().getLogin(login, senha)).toString());
 	}
 	
 	@FXML

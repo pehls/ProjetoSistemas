@@ -7,9 +7,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import util.ItensEstaticos;
 
 public class LoginView extends Application {
-	private Stage stageLogin;
 	
 	@Override
 	public void start(Stage primaryStage) throws IOException {
@@ -17,7 +17,7 @@ public class LoginView extends Application {
         Pane myPane = (Pane)FXMLLoader.load(getClass().getResource("Login.fxml"));
         Scene myScene = new Scene(myPane);
         primaryStage.setScene(myScene);
-        stageLogin = primaryStage;
+        ItensEstaticos.setStageLogin(primaryStage);
         primaryStage.show();
 	}
 

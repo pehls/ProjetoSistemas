@@ -6,8 +6,11 @@ import javafx.scene.control.TextField;
 import managedbean.LoginMB;
 import model.Login;
 import model.LoginType;
+import util.ItensEstaticos;
 
 public class CadastroController {
+	private static final LoginMB LG_MB = ItensEstaticos.getLgMB();
+
 	@FXML
 	TextField txUser;
 	
@@ -20,8 +23,6 @@ public class CadastroController {
 	@FXML
 	Button cadastroBtn;
 	
-	private LoginMB lgMB = new LoginMB();
-	
 	public Button getCadastroBtn() {
 		return cadastroBtn;
 	}
@@ -33,10 +34,10 @@ public class CadastroController {
 		LoginType lgnTp = new LoginType(txTipe.getText());
 		lg.setLoginType(lgnTp);
 		
-		LoginMB lgMB = new LoginMB();
-		lgMB.setLogin(lg);
-		if (lgMB.adicionarLogins())
-				CadastroView.getStageCadastro().close();
+		LG_MB.setLogin(lg);
+		if (LG_MB.adicionarLogins())
+				ItensEstaticos.getStageCadastro().close();
 	}
+
 
 }
