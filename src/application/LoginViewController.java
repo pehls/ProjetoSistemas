@@ -40,6 +40,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -52,41 +54,50 @@ import util.ItensEstaticos;
 public class LoginViewController {
 	@FXML
 	TextField txUser;
-	
+
 	@FXML
 	TextField txPass;
-	
+
 	@FXML
 	Button loginBtn;
 
 	@FXML
-	public void Login () {
+	public void Login() {
 		String login = txUser.getText();
 		String senha = txPass.getText();
-		System.out.println(login + " - "+ senha);
-//		Login lg = new Login(login, senha);
-//		
-//		LoginType lgnTp = new LoginType("customer");
-//		lg.setLoginType(lgnTp);
-//		
-//		LoginMB lgMB = new LoginMB();
-//		lgMB.setLogin(lg);
-//		lgMB.adicionarLogins();
-		System.out.println((ItensEstaticos.getLgMB().getLogin(login, senha)).toString());
+		System.out.println(login + " - " + senha);
+		// Login lg = new Login(login, senha);
+		//
+		// LoginType lgnTp = new LoginType("customer");
+		// lg.setLoginType(lgnTp);
+		//
+		// LoginMB lgMB = new LoginMB();
+		// lgMB.setLogin(lg);
+		// lgMB.adicionarLogins();
+		if (ItensEstaticos.getLgMB().getLogin(login, senha) != null)
+			System.out.println((ItensEstaticos.getLgMB().getLogin(login, senha)).toString());
+		else {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Cadastre-se!");
+			alert.setHeaderText("Ops, você não se cadastrou!");
+			alert.setContentText("Por favor, aperte em cadastrar e cadastre-se!");
+
+			alert.showAndWait();
+		}
 	}
-	
+
 	@FXML
 	public void Cadastrar() throws Exception {
-		
-//		Stage primaryStage = new Stage();
-//		primaryStage.setTitle("Cadastro");
-//        Pane myPane = (Pane)FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
-//        Scene myScene = new Scene(myPane);
-//        primaryStage.setScene(myScene);
-//        primaryStage.show();
+
+		// Stage primaryStage = new Stage();
+		// primaryStage.setTitle("Cadastro");
+		// Pane myPane =
+		// (Pane)FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
+		// Scene myScene = new Scene(myPane);
+		// primaryStage.setScene(myScene);
+		// primaryStage.show();
 		CadastroView cadastro = new CadastroView();
 		cadastro.start(new Stage());
 	}
 
-	
 }
