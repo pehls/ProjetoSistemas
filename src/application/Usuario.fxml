@@ -13,32 +13,32 @@
 <AnchorPane prefHeight="556.0" prefWidth="685.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60">
    <children>
       <AnchorPane layoutX="-126.0" layoutY="-177.0" prefHeight="200.0" prefWidth="200.0" />
-      <TableView id="listaTbView" layoutX="32.0" layoutY="111.0" prefHeight="338.0" prefWidth="413.0">
+      <TableView fx:id="listaTbView" layoutX="32.0" layoutY="111.0" prefHeight="338.0" prefWidth="413.0">
         <columns>
-          <TableColumn id="pedidoTbCol" prefWidth="81.0" text="Pedido" />
-          <TableColumn id="statusTbCol" prefWidth="90.0" text="Status" />
-            <TableColumn id="fornecedorTbCol" prefWidth="170.0" text="Fornecedor" />
-            <TableColumn id="botaoTbCol" prefWidth="70.0" />
+          <TableColumn fx:id="pedfx:idoTbCol" prefWidth="81.0" text="Pedfx:ido" />
+          <TableColumn fx:id="statusTbCol" prefWidth="90.0" text="Status" />
+            <TableColumn fx:id="fornecedorTbCol" prefWidth="170.0" text="Fornecedor" />
+            <TableColumn fx:id="botaoTbCol" prefWidth="70.0" />
         </columns>
       </TableView>
-      <Button id="historicoBtn" layoutX="500.0" layoutY="15.0" mnemonicParsing="false" onAction="#abrirHistorico" prefHeight="34.0" prefWidth="116.0" text="Histórico" />
-      <Button id="verNotificacoesBtn" layoutX="478.0" layoutY="411.0" mnemonicParsing="false" onAction="#abrirNotificacoes" prefHeight="34.0" prefWidth="160.0" text="Ver todas notificações" />
-      <Button id="gerarNovoPedidoBtn" layoutX="500.0" layoutY="61.0" mnemonicParsing="false" onAction="#gerarNovoPedido" prefHeight="34.0" prefWidth="116.0" text="Gerar novo Pedido" />
+      <Button fx:id="historicoBtn" layoutX="500.0" layoutY="15.0" mnemonicParsing="false" onAction="#abrirHistorico" prefHeight="34.0" prefWidth="116.0" text="Histórico" />
+      <Button fx:id="verNotificacoesBtn" layoutX="478.0" layoutY="411.0" mnemonicParsing="false" onAction="#abrirNotificacoes" prefHeight="34.0" prefWidth="160.0" text="Ver todas notificações" />
+      <Button fx:id="gerarNovoPedfx:idoBtn" layoutX="500.0" layoutY="61.0" mnemonicParsing="false" onAction="#gerarNovoPedfx:ido" prefHeight="34.0" prefWidth="116.0" text="Gerar novo Pedfx:ido" />
       <Button layoutX="35.0" layoutY="459.0" mnemonicParsing="false" onAction="#atualizarTela" text="Atualizar" />
       <Label layoutX="34.0" layoutY="15.0" text="Olá! Seja bem vindo," />
-      <Label id="usuarioLbl" layoutX="146.0" layoutY="15.0" text="Usuario" />
-      <Label layoutX="30.0" layoutY="64.0" prefHeight="27.0" prefWidth="174.0" text="Pedidos Pendentes">
+      <Label fx:id="usuarioLbl" layoutX="146.0" layoutY="15.0" text="Usuario" />
+      <Label layoutX="30.0" layoutY="64.0" prefHeight="27.0" prefWidth="174.0" text="Pedfx:idos Pendentes">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField id="buscarTxtField" layoutX="35.0" layoutY="494.0" prefHeight="25.0" prefWidth="204.0" />
-      <Button id="buscarBtn" layoutX="382.0" layoutY="494.0" mnemonicParsing="false" onAction="#buscarPedidos" prefHeight="25.0" prefWidth="63.0" text="Buscar" />
-      <TableView id="notificacoesTbv" layoutX="478.0" layoutY="111.0" prefHeight="289.0" prefWidth="160.0">
+      <TextField fx:id="buscarTxtField" layoutX="35.0" layoutY="494.0" prefHeight="25.0" prefWidth="204.0" />
+      <Button fx:id="buscarBtn" layoutX="382.0" layoutY="494.0" mnemonicParsing="false" onAction="#buscarPedfx:idos" prefHeight="25.0" prefWidth="63.0" text="Buscar" />
+      <TableView fx:id="notificacoesTbv" layoutX="478.0" layoutY="111.0" prefHeight="289.0" prefWidth="160.0">
         <columns>
-          <TableColumn id="notificacoesTbColumn" prefWidth="159.0" text="Notificações" />
+          <TableColumn fx:id="notificacoesTbColumn" prefWidth="159.0" text="Notificações" />
         </columns>
       </TableView>
-      <ComboBox id="tipoPesquisaCbb" layoutX="253.0" layoutY="494.0" prefHeight="25.0" prefWidth="116.0" />
+      <ComboBox fx:id="tipoPesquisaCbb" layoutX="253.0" layoutY="494.0" prefHeight="25.0" prefWidth="116.0" />
    </children>
 </AnchorPane>
