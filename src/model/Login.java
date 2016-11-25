@@ -8,8 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+@NamedQueries({
+	@NamedQuery(name = "login.list", query = "select l from Login l"),
+	@NamedQuery(name="login.byUser", query = "select l from Login l where l.LGN_USERNAME = :user")
+})
 @Entity
 @Table (name="LOGINS")
 public class Login implements Serializable{
