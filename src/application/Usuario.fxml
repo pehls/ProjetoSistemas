@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="556.0" prefWidth="685.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60">
+<AnchorPane prefHeight="556.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="-126.0" layoutY="-177.0" prefHeight="200.0" prefWidth="200.0" />
       <TableView fx:id="listaTbView" layoutX="32.0" layoutY="111.0" prefHeight="338.0" prefWidth="413.0">
@@ -26,7 +25,7 @@
       <Button fx:id="gerarNovoPedidoBtn" layoutX="500.0" layoutY="61.0" mnemonicParsing="false" onAction="#gerarNovoPedido" prefHeight="34.0" prefWidth="116.0" text="Gerar novo Pedido" />
       <Button layoutX="35.0" layoutY="459.0" mnemonicParsing="false" onAction="#atualizarTela" text="Atualizar" />
       <Label layoutX="34.0" layoutY="15.0" text="Olá! Seja bem vindo," />
-      <Label fx:id="usuarioLbl" layoutX="146.0" layoutY="15.0" text="Usuario" />
+      <Label fx:id="usuarioLbl" layoutX="179.0" layoutY="15.0" text="Usuario" />
       <Label layoutX="30.0" layoutY="64.0" prefHeight="27.0" prefWidth="174.0" text="Pedidos Pendentes">
          <font>
             <Font name="System Bold" size="18.0" />
