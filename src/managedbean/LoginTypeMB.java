@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
 
-import controller.FullDAO;
+import util.JpaUtil;
 import model.LoginType;
 
 @ManagedBean
@@ -30,7 +30,7 @@ public class LoginTypeMB {
 	public boolean adicionarLgnTypes() {
 		try {
 			for (LoginType loginType : lgnTypes) {
-				FullDAO.salvar(loginType);
+				JpaUtil.salvar(loginType);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

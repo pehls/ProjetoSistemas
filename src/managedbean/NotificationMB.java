@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
 
-import controller.FullDAO;
+import util.JpaUtil;
 import model.Notification;
 
 @ManagedBean
@@ -29,7 +29,7 @@ public class NotificationMB {
 	public boolean adicionar() {
 		try {
 			for (Notification notification : notifications) {
-				FullDAO.salvar(notification);
+				JpaUtil.salvar(notification);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

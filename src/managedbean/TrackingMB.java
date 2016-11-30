@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
 
-import controller.FullDAO;
+import util.JpaUtil;
 import model.Tracking;
 
 @ManagedBean
@@ -29,7 +29,7 @@ public class TrackingMB {
 	public boolean adicionar() {
 		try {
 			for (Tracking tracking : trackings) {
-				FullDAO.salvar(tracking);
+				JpaUtil.salvar(tracking);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

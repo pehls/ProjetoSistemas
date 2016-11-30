@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
 
-import controller.FullDAO;
+import util.JpaUtil;
 import model.Provider;
 
 @ManagedBean
@@ -29,7 +29,7 @@ public class ProviderMB {
 	public boolean adicionar() {
 		try {
 			for (Provider provider : providers) {
-				FullDAO.salvar(provider);
+				JpaUtil.salvar(provider);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
 
-import controller.FullDAO;
+import util.JpaUtil;
 import model.Deliverer;
 
 @ManagedBean
@@ -31,7 +31,7 @@ public class DelivererMB {
 	public boolean adicionarDeliverers() {
 		try {
 			for (Deliverer deliverer : deliverers) {
-				FullDAO.salvar(deliverer);
+				JpaUtil.salvar(deliverer);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

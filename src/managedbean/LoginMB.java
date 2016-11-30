@@ -1,10 +1,11 @@
 package managedbean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
-import controller.FullDAO;
+import util.JpaUtil;
 import model.Login;
 
 @ManagedBean
@@ -25,7 +26,8 @@ public class LoginMB {
 	}
 	
 	public Login getLogin (String username, String password) {
-		for (Login login : logins) {
+		List<Login> results = (List<Login>) JpaUtil.buscarQuery("login.byUser", username);
+		for (Login login : results) {
 			if (login.getLGN_USERNAME().equals(username))
 				if (login.getLGN_PASSWORD().equals(password))
 						return login;
@@ -42,7 +44,7 @@ public class LoginMB {
 	public boolean adicionarLogins() {
 		try {
 			for (Login login : logins) {
-				FullDAO.salvar(login);
+				JpaUtil.salvar(login);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

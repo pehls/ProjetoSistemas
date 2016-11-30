@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
 
-import controller.FullDAO;
+import util.JpaUtil;
 import model.OrderState;
 
 @ManagedBean
@@ -29,7 +29,7 @@ public class OrderStateMB {
 	public boolean adicionar() {
 		try {
 			for (OrderState orderState : orderStates) {
-				FullDAO.salvar(orderState);
+				JpaUtil.salvar(orderState);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

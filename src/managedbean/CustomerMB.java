@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
 
-import controller.FullDAO;
+import util.JpaUtil;
 import model.Customer;
 
 @ManagedBean
@@ -27,7 +27,7 @@ public class CustomerMB {
 	public boolean adicionarCustomer() {
 		try {
 			for (Customer customer : customers) {
-				FullDAO.salvar(customer);
+				JpaUtil.salvar(customer);
 			} 
 		}catch (Exception e) {
 			e.printStackTrace();
