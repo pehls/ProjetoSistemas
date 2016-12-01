@@ -25,16 +25,9 @@ public class LoginMB {
 		return login;
 	}
 	
-	public Login getLogin (String username, String password) {
+	public List<Login> getLogin (String username, String password) {
 		List<Login> results = (List<Login>) JpaUtil.buscarQuery("login.byUser", username);
-		for (Login login : results) {
-			if (login.getLGN_USERNAME().equals(username))
-				if (login.getLGN_PASSWORD().equals(password))
-						return login;
-			else
-				return null;
-		}
-		return null;
+		return results;
 	}
 
 	public void setLogin(Login login) {
@@ -52,8 +45,9 @@ public class LoginMB {
 		return true;
 	}
 
-	public ArrayList<Login> getLogins() {
-		return logins;
+	public List<Login> getLogins() {
+		List<Login> results = (List<Login>) JpaUtil.buscarQuery("login.list");
+		return results;
 	}
 
 }

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import com.lynden.gmapsfx.*?>
 
-<AnchorPane id="AnchorPane" fx:controller="application.FXMLController"
+<AnchorPane id="AnchorPane" fx:controller="controller.FXMLController"
 	prefHeight="616.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/8"
 	xmlns:fx="http://javafx.com/fxml/1">
 	<children>

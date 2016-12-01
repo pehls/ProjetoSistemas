@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @NamedQueries({
 	@NamedQuery(name = "login.list", query = "select l from Login l"),
-	@NamedQuery(name="login.byUser", query = "select l from Login l where l.LGN_USERNAME = :user")
+	@NamedQuery(name="login.byUser", query = "select l from Login l where l.LGN_USERNAME = ?1")
 })
 @Entity
 @Table (name="LOGINS")

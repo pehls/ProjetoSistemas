@@ -9,21 +9,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="556.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="556.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsuarioController">
    <children>
-      <AnchorPane layoutX="-126.0" layoutY="-177.0" prefHeight="200.0" prefWidth="200.0" />
-      <TableView fx:id="listaTbView" layoutX="32.0" layoutY="111.0" prefHeight="338.0" prefWidth="413.0">
+      <AnchorPane layoutX="3.0" prefHeight="556.0" prefWidth="685.0" />
+      <TableView fx:id="listaTbView" fixedCellSize="1.0" layoutX="32.0" layoutY="94.0" minHeight="100.0" minWidth="80.0" prefHeight="355.0" prefWidth="413.0">
         <columns>
-          <TableColumn fx:id="pedidoTbCol" prefWidth="81.0" text="Pedfx:ido" />
-          <TableColumn fx:id="statusTbCol" prefWidth="90.0" text="Status" />
-            <TableColumn fx:id="fornecedorTbCol" prefWidth="170.0" text="Fornecedor" />
-            <TableColumn fx:id="botaoTbCol" prefWidth="70.0" />
+          <TableColumn fx:id="pedidoTbCol" minWidth="80.0" prefWidth="-1.0" style="-fx-alignment: center_right;" text="Pedido" />
+          <TableColumn fx:id="statusTbCol" minWidth="80.0" prefWidth="90.0" style="-fx-alignment: center_right;" text="Status" />
+            <TableColumn fx:id="fornecedorTbCol" minWidth="100.0" prefWidth="152.0" style="-fx-alignment: center_right;" text="Fornecedor" />
+            <TableColumn fx:id="botaoTbCol" minWidth="80.0" prefWidth="88.0" style="-fx-alignment: center_right;" />
         </columns>
       </TableView>
-      <Button fx:id="historicoBtn" layoutX="500.0" layoutY="15.0" mnemonicParsing="false" onAction="#abrirHistorico" prefHeight="34.0" prefWidth="116.0" text="Histórico" />
-      <Button fx:id="verNotificacoesBtn" layoutX="478.0" layoutY="411.0" mnemonicParsing="false" onAction="#abrirNotificacoes" prefHeight="34.0" prefWidth="160.0" text="Ver todas notificações" />
-      <Button fx:id="gerarNovoPedidoBtn" layoutX="500.0" layoutY="61.0" mnemonicParsing="false" onAction="#gerarNovoPedido" prefHeight="34.0" prefWidth="116.0" text="Gerar novo Pedido" />
-      <Button layoutX="35.0" layoutY="459.0" mnemonicParsing="false" onAction="#atualizarTela" text="Atualizar" />
+      <Button fx:id="historicoBtn" layoutX="500.0" layoutY="15.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="116.0" text="Histórico" />
+      <Button fx:id="verNotificacoesBtn" layoutX="478.0" layoutY="411.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="160.0" text="Ver todas notificações" />
+      <Button fx:id="gerarNovoPedidoBtn" layoutX="500.0" layoutY="61.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="116.0" text="Gerar novo Pedido" />
+      <Button fx:id="atualizarBtn" layoutX="35.0" layoutY="459.0" mnemonicParsing="false" onAction="#Atualizar" text="Atualizar" />
       <Label layoutX="34.0" layoutY="15.0" text="Olá! Seja bem vindo," />
       <Label fx:id="usuarioLbl" layoutX="179.0" layoutY="15.0" text="Usuario" />
       <Label layoutX="30.0" layoutY="64.0" prefHeight="27.0" prefWidth="174.0" text="Pedidos Pendentes">
@@ -32,7 +32,7 @@
          </font>
       </Label>
       <TextField fx:id="buscarTxtField" layoutX="35.0" layoutY="494.0" prefHeight="25.0" prefWidth="204.0" />
-      <Button fx:id="buscarBtn" layoutX="382.0" layoutY="494.0" mnemonicParsing="false" onAction="#buscarPedidos" prefHeight="25.0" prefWidth="63.0" text="Buscar" />
+      <Button fx:id="buscarBtn" layoutX="382.0" layoutY="494.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="Buscar" />
       <TableView fx:id="notificacoesTbV" layoutX="478.0" layoutY="111.0" prefHeight="289.0" prefWidth="160.0">
         <columns>
           <TableColumn fx:id="notificacoesTbColumn" prefWidth="159.0" text="Notificações" />

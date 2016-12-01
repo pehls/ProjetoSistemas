@@ -30,10 +30,14 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package application;
+package controller;
 
 import java.io.IOException;
 
+import application.CadastroView;
+import application.UsuarioView;
+import bo.LoginBO;
+import exceptions.ValidacaoLoginException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -60,12 +64,15 @@ public class LoginViewController {
 
 	@FXML
 	Button loginBtn;
-
+	
+	
+	
 	@FXML
-	public void Login() {
+	public void Login() throws ValidacaoLoginException, IOException {
 		String login = txUser.getText();
 		String senha = txPass.getText();
 		System.out.println(login + " - " + senha);
+		ItensEstaticos.setLogin(ItensEstaticos.getLoginBO().getLogin(login, senha));
 		// Login lg = new Login(login, senha);
 		//
 		// LoginType lgnTp = new LoginType("customer");
@@ -74,9 +81,11 @@ public class LoginViewController {
 		// LoginMB lgMB = new LoginMB();
 		// lgMB.setLogin(lg);
 		// lgMB.adicionarLogins();
-		if (ItensEstaticos.getLgMB().getLogin(login, senha) != null)
-			System.out.println((ItensEstaticos.getLgMB().getLogin(login, senha)).toString());
-		else {
+		if (ItensEstaticos.getLogin() != null){
+			System.out.println(ItensEstaticos.getLogin().toString());
+			UsuarioView usuario = new UsuarioView();
+			usuario.start(new Stage());
+		}else {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Cadastre-se!");
 			alert.setHeaderText("Ops, você não se cadastrou!");

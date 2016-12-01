@@ -1,5 +1,6 @@
-package application;
+package controller;
 
+import bo.LoginBO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -9,7 +10,6 @@ import model.LoginType;
 import util.ItensEstaticos;
 
 public class CadastroController {
-	private static final LoginMB LG_MB = ItensEstaticos.getLgMB();
 
 	@FXML
 	TextField txUser;
@@ -34,8 +34,7 @@ public class CadastroController {
 		LoginType lgnTp = new LoginType(txTipe.getText());
 		lg.setLoginType(lgnTp);
 		
-		LG_MB.setLogin(lg);
-		if (LG_MB.adicionarLogins())
+		if (ItensEstaticos.getLoginBO().setLogin(lg))
 				ItensEstaticos.getStageCadastro().close();
 	}
 

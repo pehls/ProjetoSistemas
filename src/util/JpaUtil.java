@@ -17,7 +17,7 @@ public class JpaUtil {
 
 	public static void abrir() {
 		try {
-			factory = Persistence.createEntityManagerFactory("jpa");
+			factory = Persistence.createEntityManagerFactory("notificator");
 			em = factory.createEntityManager();
 
 		} catch (RuntimeException e) {
@@ -39,7 +39,7 @@ public class JpaUtil {
 		em.getTransaction().commit();
 
 		System.out.println("Objeto Gravado com Sucesso - " + ((Object) obj).toString());
-		em.close();
+		//em.close();
 	}
 
 	public static List buscarQuery(String query) {
@@ -48,16 +48,16 @@ public class JpaUtil {
 		em.getTransaction().begin();
 		List<Object> result = em.createNamedQuery(query).getResultList();
 		// em.getTransaction().commit();
-		em.close();
+		//em.close();
 		return result;
 	}
 	public static List buscarQuery(String query, String param) {
 		if (!em.isOpen())
 			abrir();
 		em.getTransaction().begin();
-		List<Object> result = em.createNamedQuery(query).setParameter(0, param).getResultList();
+		List<Object> result = em.createNamedQuery(query).setParameter(1, param).getResultList();
 		// em.getTransaction().commit();
-		em.close();
+		//em.close();
 		return result;
 	}
 
@@ -68,7 +68,7 @@ public class JpaUtil {
 		// Busca o cliente, recebendo o Codigo como parametro
 		Object obj = em.find(classe, id);
 		em.getTransaction().commit();
-		em.close();
+		//em.close();
 		return obj;
 	}
 
@@ -114,7 +114,7 @@ public class JpaUtil {
 		em.remove(obj);
 		em.flush();
 		em.getTransaction().commit();
-		em.close();
+		//em.close();
 	}
 
 }
