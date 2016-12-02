@@ -6,8 +6,9 @@ import managedbean.LoginMB;
 import model.Login;
 
 public class ItensEstaticos {
-	private static LoginMB lgMB = new LoginMB();
-	private static LoginBO loginBO = new LoginBO(ItensEstaticos.getLgMB());
+	private static final LoginMB lgMB = new LoginMB();
+	private static final LoginBO loginBO = new LoginBO();
+	private static final JpaUtil jpaUtil = new JpaUtil();
 	private static Stage stageCadastro, stageLogin, stageUsuario, stageAcompanhamento;
 	private static Login login;
 	public static Stage getStageLogin() {
@@ -19,9 +20,7 @@ public class ItensEstaticos {
 	public static LoginMB getLgMB() {
 		return lgMB;
 	}
-	public static void setLgMB(LoginMB lgMB) {
-		ItensEstaticos.lgMB = lgMB;
-	}
+	
 	public static Stage getStageCadastro() {
 		return stageCadastro;
 	}
@@ -49,8 +48,9 @@ public class ItensEstaticos {
 	public static LoginBO getLoginBO() {
 		return loginBO;
 	}
-	public void setLoginBO(LoginBO loginBO) {
-		ItensEstaticos.loginBO = loginBO;
+	public static JpaUtil getJpautil() {
+		return jpaUtil;
 	}
+
 
 }

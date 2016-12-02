@@ -1,10 +1,8 @@
 package controller;
 
-import bo.LoginBO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import managedbean.LoginMB;
 import model.Login;
 import model.LoginType;
 import util.ItensEstaticos;

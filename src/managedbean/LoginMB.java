@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
+import util.ItensEstaticos;
 import util.JpaUtil;
 import model.Login;
 
@@ -26,6 +27,8 @@ public class LoginMB {
 	}
 	
 	public List<Login> getLogin (String username, String password) {
+		ItensEstaticos.getJpautil();
+		@SuppressWarnings("unchecked")
 		List<Login> results = (List<Login>) JpaUtil.buscarQuery("login.byUser", username);
 		return results;
 	}
@@ -37,6 +40,7 @@ public class LoginMB {
 	public boolean adicionarLogins() {
 		try {
 			for (Login login : logins) {
+				ItensEstaticos.getJpautil();
 				JpaUtil.salvar(login);
 			}
 		} catch (Exception e) {
@@ -46,6 +50,8 @@ public class LoginMB {
 	}
 
 	public List<Login> getLogins() {
+		ItensEstaticos.getJpautil();
+		@SuppressWarnings("unchecked")
 		List<Login> results = (List<Login>) JpaUtil.buscarQuery("login.list");
 		return results;
 	}

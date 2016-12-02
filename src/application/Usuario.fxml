@@ -12,14 +12,7 @@
 <AnchorPane prefHeight="556.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsuarioController">
    <children>
       <AnchorPane layoutX="3.0" prefHeight="556.0" prefWidth="685.0" />
-      <TableView fx:id="listaTbView" fixedCellSize="1.0" layoutX="32.0" layoutY="94.0" minHeight="100.0" minWidth="80.0" prefHeight="355.0" prefWidth="413.0">
-        <columns>
-          <TableColumn fx:id="pedidoTbCol" minWidth="80.0" prefWidth="-1.0" style="-fx-alignment: center_right;" text="Pedido" />
-          <TableColumn fx:id="statusTbCol" minWidth="80.0" prefWidth="90.0" style="-fx-alignment: center_right;" text="Status" />
-            <TableColumn fx:id="fornecedorTbCol" minWidth="100.0" prefWidth="152.0" style="-fx-alignment: center_right;" text="Fornecedor" />
-            <TableColumn fx:id="botaoTbCol" minWidth="80.0" prefWidth="88.0" style="-fx-alignment: center_right;" />
-        </columns>
-      </TableView>
+      <TableView fx:id="listaTbView" fixedCellSize="1.0" layoutX="32.0" layoutY="94.0" minHeight="355.0" minWidth="80.0" prefHeight="355.0" prefWidth="413.0" />
       <Button fx:id="historicoBtn" layoutX="500.0" layoutY="15.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="116.0" text="Histórico" />
       <Button fx:id="verNotificacoesBtn" layoutX="478.0" layoutY="411.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="160.0" text="Ver todas notificações" />
       <Button fx:id="gerarNovoPedidoBtn" layoutX="500.0" layoutY="61.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="116.0" text="Gerar novo Pedido" />

@@ -11,8 +11,9 @@ public class JpaUtil {
 	private static EntityManager em;
 	private static EntityManagerFactory factory;
 
-	static {
+	public JpaUtil() {
 		abrir();
+		// TODO Auto-generated constructor stub
 	}
 
 	public static void abrir() {
@@ -31,62 +32,67 @@ public class JpaUtil {
 	}
 
 	public static void salvar(Object obj) {
-		if (!em.isOpen())
-			abrir();
+//		if (!em.isOpen())
+//			abrir();
 		em.getTransaction().begin();
 		em.persist(obj);
 		em.flush();
 		em.getTransaction().commit();
 
 		System.out.println("Objeto Gravado com Sucesso - " + ((Object) obj).toString());
-		//em.close();
+//		em.close();
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static List buscarQuery(String query) {
-		if (!em.isOpen())
-			abrir();
+//		if (!em.isOpen())
+//			abrir();
 		em.getTransaction().begin();
+		@SuppressWarnings("unchecked")
 		List<Object> result = em.createNamedQuery(query).getResultList();
 		// em.getTransaction().commit();
-		//em.close();
+//		em.close();
 		return result;
 	}
+	@SuppressWarnings("rawtypes")
 	public static List buscarQuery(String query, String param) {
-		if (!em.isOpen())
-			abrir();
+//		if (!em.isOpen())
+//			abrir();
 		em.getTransaction().begin();
+		@SuppressWarnings("unchecked")
 		List<Object> result = em.createNamedQuery(query).setParameter(1, param).getResultList();
-		// em.getTransaction().commit();
-		//em.close();
+		em.getTransaction().commit();
+//		em.close();
 		return result;
 	}
 
-	public static Object buscar(Class classe, int id) {
-		if (!em.isOpen())
-			abrir();
+	public static Object buscar(@SuppressWarnings("rawtypes") Class classe, int id) {
+//		if (!em.isOpen())
+//			abrir();
 		em.getTransaction().begin();
 		// Busca o cliente, recebendo o Codigo como parametro
+		@SuppressWarnings("unchecked")
 		Object obj = em.find(classe, id);
 		em.getTransaction().commit();
-		//em.close();
+//		em.close();
 		return obj;
 	}
 
 	public static void altera(Object obj) {
-		if (!em.isOpen())
-			abrir();
+//		if (!em.isOpen())
+//			abrir();
 		em.getTransaction().begin();
 		em.merge(obj);
 		em.flush();
 
 		// em.getTransaction().commit();
-		// em.close();
+//		 em.close();
 		salvar(obj);
 	}
 
-	public static void atualizar(Class classe, int id) {
-		if (!em.isOpen())
-			abrir();
+	public static void atualizar(@SuppressWarnings("rawtypes") Class classe, int id) {
+//		if (!em.isOpen())
+//			abrir();
 		Object obj = buscar(classe, id);
 		System.out.println("Objeto atual Atual___________________________________");
 		System.out.println(obj);
@@ -98,9 +104,9 @@ public class JpaUtil {
 		System.out.println(obj1);
 	}
 
-	public static void remover(Class classe, int Codigo) {
-		if (!em.isOpen())
-			abrir();
+	public static void remover(@SuppressWarnings("rawtypes") Class classe, int Codigo) {
+//		if (!em.isOpen())
+//			abrir();
 		Object obj = buscar(classe, Codigo);
 		System.out.println("Objecto a ser Removido_________________");
 		System.out.println(obj);
@@ -108,13 +114,13 @@ public class JpaUtil {
 	}
 
 	public static void remover(Object obj) {
-		if (!em.isOpen())
-			abrir();
+//		if (!em.isOpen())
+//			abrir();
 		em.getTransaction().begin();
 		em.remove(obj);
 		em.flush();
 		em.getTransaction().commit();
-		//em.close();
+//		em.close();
 	}
 
 }

@@ -12,7 +12,7 @@ public class AcompanhamentoView extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("Acompanhamento");
-        Pane myPane = (Pane)FXMLLoader.load(getClass().getResource("Acompanhamento.fxml"));
+        Pane myPane = (Pane)FXMLLoader.load(getClass().getResource("/application/Acompanhamento.fxml"));
         Scene myScene = new Scene(myPane);
         primaryStage.setScene(myScene);
         ItensEstaticos.setStageAcompanhamento(primaryStage);

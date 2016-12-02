@@ -14,10 +14,11 @@ public class UsuarioView extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		primaryStage.setTitle("Usuario");
-        Pane myPane = (Pane)FXMLLoader.load(getClass().getResource("Usuario.fxml"));
+        Pane myPane = (Pane)FXMLLoader.load(getClass().getResource("/application/Usuario.fxml"));
         Scene myScene = new Scene(myPane);
         primaryStage.setScene(myScene);
         ItensEstaticos.setStageUsuario(primaryStage);
+//        ItensEstaticos.getStageLogin().close();
         primaryStage.show();
 	}
 

@@ -37,7 +37,7 @@ public class AcompanhamentoController implements Initializable, MapComponentInit
     
     @Override
     public void mapInitialized() {
-    	LatLong Path00 = new LatLong(-30.079176926794396, -51.217891573905945);
+    	//LatLong Path00 = new LatLong(-30.079176926794396, -51.217891573905945);
     	LatLong Path01 = new LatLong(-30.078540969199885, -51.21701717376709);
     	LatLong Path02 = new LatLong(-30.077338673233918, -51.215359568595886);
     	LatLong Path03 = new LatLong(-30.076809472695032, -51.21457099914551);
@@ -136,7 +136,7 @@ public class AcompanhamentoController implements Initializable, MapComponentInit
         InfoWindowOptions infoWindowOptions = new InfoWindowOptions();
         infoWindowOptions.content("<h2>Fred</h2>"
                                 + "Localização: Rua Sepé Tiaraju<br>"
-                                + "ETA: 5 minutes" );
+                                + "Tempo até chegada: 5 minutos" );
 
         InfoWindow fredWilkeInfoWindow = new InfoWindow(infoWindowOptions);
         fredWilkeInfoWindow.open(map, marker09);

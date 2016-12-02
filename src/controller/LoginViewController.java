@@ -36,23 +36,13 @@ import java.io.IOException;
 
 import application.CadastroView;
 import application.UsuarioView;
-import bo.LoginBO;
 import exceptions.ValidacaoLoginException;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import managedbean.LoginMB;
-import model.Login;
-import model.LoginType;
 import util.ItensEstaticos;
 
 public class LoginViewController {

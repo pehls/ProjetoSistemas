@@ -13,11 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Notification;
-import model.Order;
-import model.Provider;
-import model.State;
 import model.TelaUsuario;
-import util.ItensEstaticos;
 
 public class UsuarioController {
 	
@@ -66,7 +62,7 @@ public class UsuarioController {
 	@FXML
 	ComboBox<String> tipoPesquisaCbB;
 	
-	private List itens = Arrays.asList(
+	private List<TelaUsuario> itens = Arrays.asList(
 			new TelaUsuario(null,null,null),
 			new TelaUsuario("1234", "Em deslocamento", "Loja do Zé"),
 			new TelaUsuario("1235", "Em deslocamento", "Nacional")
@@ -87,6 +83,8 @@ public class UsuarioController {
 		fornecedorTbCol.setCellValueFactory(new PropertyValueFactory<TelaUsuario, String>("fornecedor"));
 		
 		botaoTbCol.setCellValueFactory(new PropertyValueFactory<TelaUsuario, Button>("btn"));
+		
+		this.listaTbView.autosize();
 		
 		this.listaTbView.setItems(FXCollections.observableArrayList(itens));
 		//this.listaTbView.getColumns().addAll(pedidoTbCol, statusTbCol, fornecedorTbCol, botaoTbCol);

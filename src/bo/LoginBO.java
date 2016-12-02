@@ -5,16 +5,13 @@ import java.util.List;
 import exceptions.ValidacaoLoginException;
 import managedbean.LoginMB;
 import model.Login;
+import util.ItensEstaticos;
 
 public class LoginBO {
-		LoginMB loginMB;
+		LoginMB loginMB = ItensEstaticos.getLgMB();
 
-		public LoginBO(LoginMB lgMB) {
-			this.loginMB = lgMB;
-		}
-
-		public void setLoginMB(LoginMB loginMB) {
-			this.loginMB = loginMB;
+		public LoginBO() {
+			
 		}
 		
 		public Login getLogin (String user, String password) throws ValidacaoLoginException {
