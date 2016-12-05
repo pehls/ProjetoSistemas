@@ -7,14 +7,22 @@ import com.notify.it.model.Notification;
 import com.notify.it.model.TelaUsuario;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 public class UsuarioController {
 	
@@ -64,7 +72,6 @@ public class UsuarioController {
 	ComboBox<String> tipoPesquisaCbB;
 	
 	private List<TelaUsuario> itens = Arrays.asList(
-			new TelaUsuario(null,null,null),
 			new TelaUsuario("1234", "Em deslocamento", "Loja do Zé"),
 			new TelaUsuario("1235", "Em deslocamento", "Nacional")
 			);
@@ -96,10 +103,34 @@ public class UsuarioController {
 		this.listaTbView.setItems(FXCollections.observableArrayList(itens));
 		//this.listaTbView.getColumns().addAll(pedidoTbCol, statusTbCol, fornecedorTbCol, botaoTbCol);
 		
-		notificacoesTbColumn.setCellValueFactory(new PropertyValueFactory<Notification, String>("NTC_INFO"));
-		
+		notificacoesTbV.setEditable(true);
+		notificacoesTbV.getSelectionModel().setCellSelectionEnabled(true);  // selects cell only, not the whole row
+		notificacoesTbV.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		 @Override
+		 public void handle(MouseEvent click) {
+		  if (click.getClickCount() == 2) {
+		   @SuppressWarnings("rawtypes")
+		   TableView tv = (TableView) click.getSource();
+		   TablePosition tb = tv.getEditingCell();
+		   tb.getRow();
+		   TableColumn column = tb.getTableColumn();
+		   OpenAlert(column.getCellData(tb.getRow()).toString());
+		  }
+		 }
+		});
+		     notificacoesTbColumn.setCellValueFactory(new PropertyValueFactory<Notification, String>("NTC_INFO"));
+
 		this.notificacoesTbV.autosize();
 		
 		this.notificacoesTbV.setItems(FXCollections.observableArrayList(itensNotification));
+	}
+	
+	public void OpenAlert (String text) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Notificação");
+		alert.setHeaderText(text);
+
+		alert.showAndWait();
+		
 	}
 }
