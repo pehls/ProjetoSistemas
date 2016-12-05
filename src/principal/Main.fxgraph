@@ -1,9 +1,0 @@
-package principal
-
-import javafx.scene.layout.AnchorPane
-
-component Main {
-	AnchorPane {
-		//TODO Add Nodes
-	}
-}
